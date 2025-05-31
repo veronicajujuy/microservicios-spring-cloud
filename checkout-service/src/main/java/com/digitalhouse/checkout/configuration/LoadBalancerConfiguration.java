@@ -10,7 +10,8 @@ import org.springframework.core.env.Environment;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.loadbalancer.core.RandomLoadBalancer;
 
-@Configuration
+//@Configuration
+// sacamos configuration para que no lea esta clase
 public class LoadBalancerConfiguration {
 
 	public class CustomLoadBalancerConfiguration {

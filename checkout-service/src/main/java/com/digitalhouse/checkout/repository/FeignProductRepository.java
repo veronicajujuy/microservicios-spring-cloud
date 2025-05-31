@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.digitalhouse.checkout.model.dto.Product;
 
 @FeignClient(name ="products-service")
-@LoadBalancerClient(name = "products-service", configuration = LoadBalancerConfiguration.class)
+//@LoadBalancerClient(name = "products-service", configuration = LoadBalancerConfiguration.class)
 public interface FeignProductRepository {
 	
 	@RequestMapping(method= RequestMethod.GET,value ="/products")
