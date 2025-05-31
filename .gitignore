@@ -1,0 +1,38 @@
+```gitignore
+# Ignorar archivos sensibles y claves
+**/src/main/resources/bootstrap.yml
+**/src/main/resources/bootstrap.yaml
+**/src/main/resources/application-secrets.yml
+**/src/main/resources/application-secrets.yaml
+
+# Evitar subir claves SSH
+*.pem
+*.key
+*.crt
+*.der
+*.p12
+*.jks
+*.keystore
+*.pub
+id_rsa*
+id_ed25519*
+
+# Archivos temporales y del sistema
+*.log
+*.tmp
+*.swp
+*.DS_Store
+
+# Archivos de compilación
+/target/
+/out/
+
+# Configuraciones locales de IDE
+.idea/
+*.iml
+
+# Archivos de entorno
+.env
+
+# Otros innecesarios
+*.class
