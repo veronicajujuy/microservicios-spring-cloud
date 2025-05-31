@@ -11,6 +11,6 @@ public class ProductRestController {
 
     @GetMapping()
     public Product getProduct() {
-        return new Product("1", "Notebook", 2000.0, "Instance 2");
+        return new Product("1", "Notebook", 2000.0, "Instance 1");
     }
 }
