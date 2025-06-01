@@ -14,11 +14,17 @@ spring:
         webflux:
          routes:
            - id: checkout-service
-             uri: lb://CHECKOUT-SERVICE  # Corregido ("lib:/@checkout-service" ? "lb://CHECKOUT-SERVICE")
+             uri: lb://CHECKOUT-SERVICE
              predicates:
-               - Path=/checkout/**  # Añadido "/**" para capturar subrutas
+               - Path=/checkout/**
              filters:
-               - StripPrefix=0
+               - AddRequestHeader=X-Request-from, gateway
+               - AddResponseHeader=X-Response-Red, blue
+
+           - id: products-service
+             uri: lb://PRODUCTS-SERVICE
+             predicates:
+               - Path=/products/**
 
 server:
   port: 8084
