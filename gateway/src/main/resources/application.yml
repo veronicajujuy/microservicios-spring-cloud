@@ -1,51 +1,27 @@
 spring:
   config:
-    import: "optional:configserver:"
+    import: "optional:configserver:"  # Corregido ("sconfigsserver" ? "configserver")
   application:
     name: gateway-service
   cloud:
     config:
       enabled: false
       discovery:
-        service-id: config-service
+        serviceId: config-service
         enabled: true
     gateway:
       server:
         webflux:
-          discovery:
-            locator:
-              enabled: false
-          routes:
-            - id: checkout-service
-              uri: lb://CHECKOUT-SERVICE
-              predicates:
-                - Path=/checkout/**
-              filters:
-                - StripPrefix=0
-          httpclient:
-            pool:
-              max-idle-time: 5s
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-    fetch-registry: true
-    register-with-eureka: true
-    healthcheck:
-      enabled: true
+         routes:
+           - id: checkout-service
+             uri: lb://CHECKOUT-SERVICE  # Corregido ("lib:/@checkout-service" ? "lb://CHECKOUT-SERVICE")
+             predicates:
+               - Path=/checkout/**  # Añadido "/**" para capturar subrutas
+             filters:
+               - StripPrefix=0
 
 server:
   port: 8084
-
-management:  # Configuración de Actuator necesaria
-  endpoint:
-    health:
-      show-details: always
-  endpoints:
-    web:
-      exposure:
-        include: health,info
 
 logging:
   level:
