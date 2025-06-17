@@ -27,7 +27,7 @@ public class ProductService  implements IProductService{
 	@Retry(name = "product")
 	public Product getProduct(String id) {
 		logger.info("Llamando a getProduct con id: {}", id);
-		return feignProductRepository.getProductById(id, true);
+		return feignProductRepository.getProductById(id, false);
 	}
 
 	public Product getProductFallbackMethod(String id, Exception exception) {
