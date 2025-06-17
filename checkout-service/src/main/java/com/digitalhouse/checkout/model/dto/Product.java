@@ -6,8 +6,13 @@ public class Product {
 	private String name;
 	private double price;
 	private String instance;
-	
-	
+
+	public Product(String id, String name, double price, String instance) {
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.instance = instance;
+	}
 
 	public String getId() {
 		return id;

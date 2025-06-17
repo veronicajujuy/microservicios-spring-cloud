@@ -14,6 +14,6 @@ import com.digitalhouse.checkout.model.dto.Product;
 public interface FeignProductRepository {
 	
 	@RequestMapping(method= RequestMethod.GET,value ="/products")
-	Product getProductById(@RequestParam String id);
+	Product getProductById(@RequestParam String id, @RequestParam Boolean throwError); // el método que se va a llamar al servicio de productos, con el id del producto y un parámetro opcional para simular un error
 
 }
