@@ -16,6 +16,11 @@ public class Checkout {
 		this.totalAmount = totalAmount;
 		this.availableMethods = availableMethods;
 	}
+
+	public Checkout(String id) {
+		this.id = id;
+	}
+
 	public String getId() {
 		return id;
 	}
