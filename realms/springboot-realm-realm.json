@@ -1,0 +1,48 @@
+{
+   "id": "springboot-realm",
+   "realm": "springboot-realm",
+   "enabled": true,
+   "users": [
+      {
+        "username": "testuser",
+        "enabled": true,
+        "emailVerified": true,
+        "firstName": "Test",
+        "lastName": "User",
+        "email": "testuser@example.com",
+        "credentials": [
+          {
+            "type": "password",
+            "value": "testpass",
+            "temporary": false
+          }
+        ],
+        "realmRoles": [
+          "USER"
+        ]
+      }
+    ],
+   "roles": {
+      "realm": [
+        {
+          "name": "USER",
+          "description": "Rol b\u00e1sico de usuario"
+        }
+      ]
+    },
+   "clients": [
+      {
+        "clientId": "springboot-app",
+        "name": "springboot-app",
+        "enabled": true,
+        "protocol": "openid-connect",
+        "publicClient": false,
+        "secret": "springboot-secret",
+        "redirectUris": [
+          "*"
+        ],
+        "standardFlowEnabled": true,
+        "directAccessGrantsEnabled": true
+      }
+   ]
+}
