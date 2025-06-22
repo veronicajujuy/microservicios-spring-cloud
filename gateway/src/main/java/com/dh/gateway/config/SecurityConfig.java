@@ -23,7 +23,10 @@ public class SecurityConfig {
                         .anyExchange().authenticated()
                 )
                 .oauth2ResourceServer((resourceServer) -> resourceServer
-                        .jwt(withDefaults())
+                        .jwt(
+                                jwt -> jwt
+                                        .jwkSetUri("http://keycloak:8080/realms/springboot-realm/protocol/openid-connect/certs")
+                        )
                 );
         // @formatter:on
         return http.build();
