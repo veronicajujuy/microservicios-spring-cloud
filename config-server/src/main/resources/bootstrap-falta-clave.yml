@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: config-service
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:veronicajujuy/config-server.git
+          privateKey: |
+            -----BEGIN OPENSSH PRIVATE KEY-----
+            aca va la clave privada
+            -----END OPENSSH PRIVATE KEY-----
+          ignoreLocalSshSettings: true
+          strictHostKeyChecking: false
+
+server:
+  port: 8888
